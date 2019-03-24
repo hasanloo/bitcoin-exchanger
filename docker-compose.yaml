@@ -11,7 +11,11 @@ services:
     depends_on:
       - db 
     environment:
-      DATABASE_URL: db://exchangerapp@postgres/bitcointousd
+      PGUSER: bitcointousdapp
+      PGHOST: db
+      PGPASSWORD: bitcointousdpass
+      PGDATABASE: bitcointousd
+      PGPORT: 5432
   db:
     image: timescale/timescaledb:latest-pg11
     volumes:
