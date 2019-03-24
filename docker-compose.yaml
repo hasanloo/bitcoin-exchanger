@@ -1,0 +1,24 @@
+version: '2'
+services:
+  web:
+    build: .
+    command: node app.js
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db 
+    environment:
+      DATABASE_URL: db://exchangerapp@postgres/bitcointousd
+  db:
+    image: timescale/timescaledb:latest-pg11
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: bitcointousdapp
+      POSTGRES_PASSWORD: bitcointousdpass
+      POSTGRES_DB: bitcointousd
