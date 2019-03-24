@@ -1,6 +1,6 @@
 ### Instruction
 
-A simple applicatin that constantly checks the currency exchange rate from Bitcoin to different currencies using [this API] (https://blockchain.info/ticker) and store it in [Timescaldb] (https://github.com/timescale/timescaledb).
+A simple applicatin that constantly checks the currency exchange rate from Bitcoin to different currencies using [this API](https://blockchain.info/ticker) and store it in [Timescaldb](https://github.com/timescale/timescaledb).
 It provide an endpoint to get the latest rate of the currency and another endpoint to return rates in a time range.
 
 ### Installation / Setup
@@ -27,4 +27,4 @@ Copy `.env.sample` to `.env` and run `make up` to set up and run the application
 
 ### Why Timescaledb
 
-In this application we try to store sequence of data points, measuring the same thing over time, stored in time order. For this purpose we can still use normal database, but using a time series database can give better results in terms of scalability and usablity. For details benefits of using Timescaledb with time series data please refer to [this link] (https://blog.timescale.com/what-the-heck-is-time-series-data-and-why-do-i-need-a-time-series-database-dcf3b1b18563/).
+In this application we try to store sequence of data points, measuring the same thing over time, stored in time order. For this purpose we can still use normal database, but using a time series database can give better results in terms of scalability and usablity. For details benefits of using Timescaledb with time series data please refer to [this link](https://blog.timescale.com/what-the-heck-is-time-series-data-and-why-do-i-need-a-time-series-database-dcf3b1b18563/).
