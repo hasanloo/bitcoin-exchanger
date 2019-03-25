@@ -16,6 +16,20 @@ services:
       PGPASSWORD: bitcointousdpass
       PGDATABASE: bitcointousd
       PGPORT: 5432
+  cron:
+    build: .
+    command: npm run cron
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    depends_on:
+      - db 
+    environment:
+      PGUSER: bitcointousdapp
+      PGHOST: db
+      PGPASSWORD: bitcointousdpass
+      PGDATABASE: bitcointousd
+      PGPORT: 5432
   db:
     image: timescale/timescaledb:latest-pg11
     volumes:
